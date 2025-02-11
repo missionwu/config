@@ -1,5 +1,5 @@
 if status is-login
-    set -x PATH $HOME/bin $PATH
+    set -x PATH $HOME/.bin $PATH
 end
 
 function ls
