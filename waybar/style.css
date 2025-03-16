@@ -61,7 +61,7 @@ window#waybar.hidden {
 }
 
 #battery {
-    background-color: #f38ba8;
+    background-color: #94e2d5;
 }
 
 #battery.warning,
@@ -77,8 +77,7 @@ window#waybar.hidden {
 }
 
 #network {
-    background-color: #94e2d5;
-    padding-right: 17px;
+    background-color: #7e9cd8;
 }
 
 #clock {
