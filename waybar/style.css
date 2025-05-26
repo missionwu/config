@@ -13,37 +13,11 @@ window#waybar {
     color: #cdd6f4;
 }
 
-#workspaces button {
-    padding: 6px 18px;
-    margin: 6px 3px;
-    border-radius: 5px;
-    color: #313244;
-}
-
-#workspaces button.active {
-    color: #a6adc8;
-}
-
-#workspaces button.focused {
-    color: #a6adc8;
-    background: #eba0ac;
-}
-
-#workspaces button.urgent {
-    color: #11111b;
-    background: #a6e3a1;
-}
-
-#workspaces button:hover {
-    background: #11111b;
-    color: #cdd6f4;
-}
-
-#clock,
-#battery,
 #network,
-#workspaces,
-#backlight {
+#backlight,
+#custom-alsa,
+#clock,
+#battery {
     padding: 6px 18px;
     margin: 2px 3px;
     border-radius: 5px;
@@ -52,23 +26,29 @@ window#waybar {
     border: 1px solid #181825;
 }
 
-#backlight {
-}
-
-#workspaces {
-    background: #1e1e2e;
-    border-radius: 20px;
-}
-
-#clock {
-    color: #fab387;
-    transition: 0.3s;
-}
-
-#network {
-    color: #f9e2af;
-}
-
 #battery {
     color: #a6e3a1;
+}
+
+#battery.charging {
+    color: black;
+    background: #a6e3a1;
+    border: 0px;
+}
+
+@keyframes blink {
+    to {
+        background: yellow;
+    }
+}
+
+#battery.warning:not(.charging) {
+    color: black;
+    background: red;
+    animation-name: blink;
+    animation-duration: 1s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    border: 0px;
 }

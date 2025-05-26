@@ -8,21 +8,10 @@
     "modules-right": [
         "network",
         "backlight",
+        "custom/alsa",
         "clock",
         "battery"
     ],
-    "clock": {
-        "interval": 60,
-        "format": "{:%H:%M} ",
-        "format-alt": "{:%Y-%m-%d %H:%M} ",
-        "tooltip": false
-    },
-    "backlight": {
-        "device": "intel_backlight",
-        "format": "{percent}% {icon}",
-        "format-icons": ["󰃞", "󰃟", "󰃠"],
-        "tooltip": false
-    },
     "network": {
         "format": "{ifname}",
         "format-wifi": "{essid} ({signalStrength}%) ",
@@ -31,8 +20,25 @@
         "max-length": 50,
         "tooltip": false
     },
-    "battery": {
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{percent}% {icon}",
+        "format-icons": ["󰃞", "󰃟", "󰃠"],
+        "tooltip": false
+    },
+    "custom/alsa": {
+        "interval": 1,
+        "exec": "amixer get Master | sed -nre 's/.*\\[off\\].*/muted /p; s/.*\\[(.*%)\\].*/\\1 /p'",
+        "tooltip": false
+    },
+    "clock": {
         "interval": 60,
+        "format": "{:%H:%M} ",
+        "format-alt": "{:%Y-%m-%d %H:%M} ",
+        "tooltip": false
+    },
+    "battery": {
+        "interval": 1,
         "states": {
             "warning": 30,
             "critical": 15
