@@ -2,10 +2,6 @@ if status is-login
     set -x PATH $HOME/.cargo/bin:$PATH
     set -x EDITOR nvim
 
-    set -x XMODIFIERS @im=fcitx
-    set -x GTK_IM_MODULE fcitx
-    set -x QT_IM_MODULE fcitx
-
     exec wayfire
 end
 
