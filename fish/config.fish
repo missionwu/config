@@ -1,5 +1,5 @@
 if status is-login
-    set -x PATH $HOME/.cargo/bin:$PATH
+    set -x PATH $HOME/.cargo/bin:$HOME/.bin:$PATH
     set -x EDITOR nvim
 
     exec wayfire
