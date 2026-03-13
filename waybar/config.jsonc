@@ -12,14 +12,16 @@
         "battery"
     ],
     "clock": {
-        "format": "{:%Y-%m-%d %H:%M}"
+        "format": "{:%Y-%m-%d %H:%M}",
+        "tooltip": false
     },
     "network": {
         "format": " {ifname}",
         "format-wifi": " {essid}({signalStrength}%)",
         "format-ethernet": "󰊗 {ipaddr}/{cidr}",
         "format-disconnected": "", //An empty format will hide the module.
-        "max-length": 50
+        "max-length": 50,
+        "tooltip": false
     },
     "custom/alsa": {
         "exec": "amixer get Master | sed -nre 's/.*\\[off\\].*/ /p; s/.*\\[(.*%)\\].*/ \\1/p'",
@@ -39,6 +41,7 @@
         "states": {
             "warning": 20,
             "critical": 10
-        }
+        },
+        "tooltip": false
     }
 }
