@@ -47,5 +47,5 @@ function fish_prompt
 end
 
 function ls
-    command ls -hv --group-directories-first --color=always $argv
+    command ls -hv --group-directories-first --color=auto $argv
 end
