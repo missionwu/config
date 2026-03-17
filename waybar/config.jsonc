@@ -1,18 +1,19 @@
 {
     "reload_style_on_change": true,
     "layer": "top",
-    "position": "top",
+    "position": "bottom",
     "spacing": 0,
     "height": 30,
-    "modules-left": [ "clock" ],
+    "modules-left": [ ],
     "modules-center": [ ],
     "modules-right": [
         "network",
         "custom/alsa",
-        "battery"
+        "battery",
+        "clock"
     ],
     "clock": {
-        "format": "{:%Y-%m-%d %H:%M}",
+        "format": " {:%Y-%m-%d %H:%M}",
         "tooltip": false
     },
     "network": {
